@@ -1,0 +1,181 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title></title>  
+    <meta charset="utf-8"/>  
+    <!--<link href="css/reset.css" rel="stylesheet" type="text/css"/>-->
+    <style>
+    *{margin:0;padding:0}
+    li{list-style:none}
+    	li  
+	{  
+	    width: 300px;  
+	    box-shadow: 0 1px 3px;  
+	    position: absolute;  
+	    bottom: 0;  
+	    cursor:pointer;
+	}  
+	  
+	li img  
+	{  
+	    width:100%;
+	    height:200px;  
+	    box-shadow: 0 1px 3px;  
+	    /*vertical-align: middle; */ 
+	}  
+	  
+	li span  
+	{  
+	    display: block;  
+	    width: 300px;  
+	    text-align: center;  
+	    color:red;  
+	    font-size: 8px;  
+	    
+	}  
+	  
+	#stage  
+	{  
+	  
+	    width: 450px;  
+	    min-height: 350px;  
+	    margin-left: auto;  
+	    margin-right: auto;  
+	    padding: 100px 50px;  
+	    perspective: 1500px;  
+	    position: relative;  
+	}  
+	  
+	#container  
+	{  
+	    /*background: url("img/12.jpg") no-repeat 0 0;*/
+	    margin-top: 100px;  
+	    width: 300px;  
+	    /*box-shadow: 0 1px 3px; */ 
+	    height: 150px;  
+	    margin-left: -34px;  
+	    
+	    transition: transform 1s;  
+	    transform-style: preserve-3d;  
+	    position: absolute;  
+	    left: 30%;  
+	}  
+	  
+	li:nth-child(0)  
+	{  
+	    transform: rotateY(0deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(1)  
+	{  
+	    transform: rotateY(40deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(2)  
+	{  
+	    transform: rotateY(80deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(3)  
+	{  
+	    transform: rotateY(120deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(4)  
+	{  
+	    transform: rotateY(160deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(5)  
+	{  
+	    transform: rotateY(200deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(6)  
+	{  
+	    transform: rotateY(240deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(7)  
+	{  
+	    transform: rotateY(280deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(8)  
+	{  
+	    transform: rotateY(320deg) translateZ(450px);  
+	}  
+	  
+	li:nth-child(9)  
+	{  
+	    transform: rotateY(360deg) translateZ(450px);  
+	}  
+    </style>
+    <script type="text/javascript" src="js/jquery-1.11.2.js" ></script>  
+    <script type="text/javascript">  
+        // alert( 64 / Math.tan(20 / 180 * Math.PI));  
+         function transform(element, value, key)  
+        {  
+            key = key || "Transform";  
+            ["Moz", "O", "Ms", "Webkit", ""].forEach(function (prefix)  
+            {  
+                element.style[prefix + key] = value;  
+            });  
+
+            return element;  
+        }  
+  
+  
+        $(function ()  
+        {  
+            var deg = -40 , i = 1;  
+            $("#container").click(function ()  
+            {  
+            	console.log($(this)[0]);
+                transform($(this)[0], "rotateY(" + (deg * i++) + "deg)")
+                //alert(typeof())
+            }); 
+           $("#container li").dblclick(function(){
+//         		$(this).css({"width":"400px"})
+           });
+        });  
+  
+    </script>  
+</head>  
+<body style="">  
+<div id="stage">  
+    <ul id="container">  
+        <li>  
+            <img src="img/1.jpg">  
+            <span>老大:"哥也年轻过。。。。也曾是小鲜肉一枚。。"</span>  
+        </li>  
+        <li>  
+            <img src="img/11.jpg"> 
+            <span>老大的幸福婚礼</span>  
+        </li>  
+        <li>  
+            <img src="img/3.jpg"/> 
+            <span>花样青春</span>  
+        </li>  
+        <li>  
+            <img src="img/4.jpg"/> <span>出来混总得要还滴。。12圆号毕业聚餐</span>  
+        </li>  
+        <li>  
+            <img src="img/10.jpg"/> <span>活泼的小的们</span>  
+        </li>  
+        <li>  
+            <img src="img/6.jpg"/> <span>大伙与10级最亲切的师姐毕业合影</span>  
+        </li>  
+        <li>  
+            <img src="img/13.jpg"/> <span>我的毕业合影</span>  
+        </li>  
+        <li>  
+            <img src="img/8.jpg"/> <span>帅气的大大师兄有圆号女神----坤哥哦</span>  
+        </li>  
+        <li>  
+            <img src="img/9.jpg"/> <span>哈哈哈。。。就当作毕业表白吧</span>  
+        </li>  
+    </ul>  
+</div>  
+</body>  
+</html>  
